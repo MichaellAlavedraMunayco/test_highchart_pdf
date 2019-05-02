@@ -1,0 +1,13 @@
+{
+    "name": "fmich/test_pdf_highchart",
+    "description": "test",
+    "require": {
+        "tecnickcom/tcpdf": "^6.2"
+    },
+    "authors": [
+        {
+            "name": "MichaellAlavedraMunayco",
+            "email": "f.michaell.a.m@gmail.com"
+        }
+    ]
+}
