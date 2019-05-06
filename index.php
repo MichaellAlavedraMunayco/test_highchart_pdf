@@ -19,10 +19,10 @@ foreach ($indicadoresDB as $id => $nombre) {
     $strid = strval($id-1);
     $countValoresBD = count($valoresDB[$strid]);
     // Pintado de tabla
-    echo "<div class='card mt-2'>";
+    echo "<div class='card mt-3'>";
     echo "<div class='card-header'>Card Indicador $id</div>";
     echo "<div class='card-body'>";
-    echo "<table id='table_$id' class='table table-bordered'>";
+    echo "<table class='table table-bordered'>";
     echo "<thead class='thead-dark'>";
     echo "<tr>";
     echo "<th>id</th>";
@@ -48,11 +48,32 @@ foreach ($indicadoresDB as $id => $nombre) {
     echo "</tr>";
     echo '</tbody>';
     echo '</table>';
-    echo "<div id='chart_$id'></div>";
+    echo "<div id='chart_$id' style='min-width: 650px; max-width: 650px; height: 350px; margin: 0 auto'></div>";
     echo "<script>fillGraphic('$id_container', '$title', '$subtitle', '$serie_name', [$serie_data]);</script>";
     echo "</div>";
     echo "</div>";
+    echo "<div style='page-break-before:always;'></div>";
 }
 echo "</div>";
  ?>
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-xl">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">PDF Viewer</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body p-0">
+         <iframe id="iframe" class="w-100" style="height: 70vh; border: none;"></iframe>
+       </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a id="btnGuardar" href="#" class="btn btn-primary" download="Reporte.pdf">Guardar</a>
+      </div>
+     </div>
+   </div>
+ </div>
+
 <?php include 'includes/footer.php' ?>
